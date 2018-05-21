@@ -241,6 +241,13 @@ Page {
                             listItem.deleteFile()
                         }
                     }
+                    MenuItem {
+                        //: Share a file
+                        //% "Share"
+                        text: qsTrId("sailfish-office-me-share")
+                        onClicked: pageStack.push("Sailfish.Office.DocumentsSharePage",
+                                                   { mimeType: model.fileMimeType, source: model.filePath })
+                    }
                 }
             }
         }

@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 2013-2014 Jolla Ltd.
- * Contact: Robin Burchell <robin.burchell@jolla.com>
+ * Copyright (C) 2018 Jolla Ltd.
+ * Contact: Lauri Kopo <lauri.kopo@jolla.com>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -20,27 +20,8 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import Sailfish.TransferEngine 1.0
 
-ShareMethodList {
-    id: menuList
-    objectName: "menuList"
+SharePage {
+    id: page
 
-    property Item visualParent
-    property string title
-    property string path
-    property string mimeType
-
-    model: SailfishTransferMethodsModel {
-        id: transferMethodsModel
-        filter: menuList.mimeType
-    }
-    source: menuList.path
-
-    header: PageHeader {
-        title: menuList.title
-        //: Share documents
-        //% "Share"
-        description: qsTrId("sailfish-office-la-share")
-    }
     serviceFilter: ["e-mail"]
-    containerPage: menuList.visualParent
 }
